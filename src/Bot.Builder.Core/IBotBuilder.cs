@@ -7,7 +7,7 @@ namespace GGroupp.Infra.Bot.Builder;
 
 public interface IBotBuilder
 {
-    IBotBuilder Use(Func<IBotContext, CancellationToken, ValueTask<TurnState>> middleware);
+    IBotBuilder Use(Func<IBotContext, CancellationToken, ValueTask<Unit>> middleware);
 
     IBot Build();
 }
