@@ -8,9 +8,13 @@ public interface IBotContext
 {
     ITurnContext TurnContext { get; }
 
+    IBotFlow BotFlow { get; }
+
     UserState UserState { get; }
 
     ConversationState ConversationState { get; }
+
+    IBotUserProvider BotUserProvider { get; }
 
     ILoggerFactory LoggerFactory { get; }
 
