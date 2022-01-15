@@ -26,7 +26,7 @@ jobs:
       run: dotnet nuget add source ${{ secrets.GGROUPP_NUGET_SOURCE_URL }} -n ggroupp -u ${{ secrets.GGROUPP_NUGET_SOURCE_USER_NAME }} -p ${{ secrets.GGROUPP_NUGET_SOURCE_USER_PASSWORD }} --store-password-in-clear-text
 
     # Bot.Builder.Core.csproj
-    
+
     - name: Restore Bot.Builder.Core.csproj
       run: dotnet restore ./src/*/Bot.Builder.Core.csproj
 
@@ -35,9 +35,20 @@ jobs:
 
     - name: Pack Bot.Builder.Core.csproj
       run: dotnet pack ./src/*/Bot.Builder.Core.csproj --no-restore -o ~/nuget  -c Release
-    
+
+    # Bot.Builder.FlowFailure.csproj
+
+    - name: Restore Bot.Builder.FlowFailure.csproj
+      run: dotnet restore ./src/*/Bot.Builder.FlowFailure.csproj
+
+    - name: Build Bot.Builder.FlowFailure.csproj
+      run: dotnet build ./src/*/Bot.Builder.FlowFailure.csproj --no-restore  -c Release
+
+    - name: Pack Bot.Builder.FlowFailure.csproj
+      run: dotnet pack ./src/*/Bot.Builder.FlowFailure.csproj --no-restore -o ~/nuget  -c Release
+
     # Push
-      
+
     - name: Push Packages
       if: ${{ github.ref == 'refs/heads/main' }}
       run: dotnet nuget push "../../../nuget/*.nupkg" -s ${{ secrets.GGROUPP_NUGET_SOURCE_URL }} -k ${{ secrets.GGROUPP_NUGET_SOURCE_USER_PASSWORD }} --skip-duplicate
