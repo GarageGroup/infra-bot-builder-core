@@ -16,6 +16,8 @@ public interface IBotContext
 
     IBotUserProvider BotUserProvider { get; }
 
+    IBotTelemetryClient BotTelemetryClient { get; }
+
     ILoggerFactory LoggerFactory { get; }
 
     IServiceProvider ServiceProvider { get; }
