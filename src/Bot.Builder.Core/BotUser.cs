@@ -10,12 +10,12 @@ public sealed record class BotUser
         Guid id,
         [AllowNull] string mail = default,
         [AllowNull] string displayName = default,
-        [AllowNull] IReadOnlyCollection<KeyValuePair<string, string>> claims = default)
+        FlatArray<KeyValuePair<string, string>> claims = default)
     {
         Id = id;
         Mail = mail ?? string.Empty;
         DisplayName = displayName ?? string.Empty;
-        Claims = claims ?? Array.Empty<KeyValuePair<string, string>>();
+        Claims = claims;
     }
 
     public Guid Id { get; }
@@ -24,5 +24,5 @@ public sealed record class BotUser
 
     public string DisplayName { get; }
 
-    public IReadOnlyCollection<KeyValuePair<string, string>> Claims { get; }
+    public FlatArray<KeyValuePair<string, string>> Claims { get; }
 }
