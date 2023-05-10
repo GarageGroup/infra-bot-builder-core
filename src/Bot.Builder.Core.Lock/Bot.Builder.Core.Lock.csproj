@@ -7,7 +7,7 @@
     <InvariantGlobalization>true</InvariantGlobalization>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RootNamespace>GarageGroup.Infra.Bot.Builder</RootNamespace>
-    <AssemblyName>GarageGroup.Infra.Bot.Builder.Lock</AssemblyName>
+    <AssemblyName>GarageGroup.Infra.Bot.Builder.Core.Lock</AssemblyName>
     <Version>0.0.1</Version>
   </PropertyGroup>
 
