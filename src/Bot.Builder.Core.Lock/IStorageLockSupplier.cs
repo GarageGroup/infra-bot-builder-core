@@ -6,4 +6,6 @@ namespace GarageGroup.Infra.Bot.Builder;
 public interface IStorageLockSupplier
 {
     Task<StorageLockStatus> LockAsync(string key, CancellationToken cancellationToken = default);
+
+    Task UnlockAsync(string key, CancellationToken cancellationToken = default);
 }
