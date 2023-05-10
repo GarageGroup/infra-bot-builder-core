@@ -31,17 +31,6 @@ jobs:
         -p ${{ secrets.GG_NUGET_SOURCE_USER_PASSWORD }}
         --store-password-in-clear-text
 
-    # Bot.Builder.Core.csproj
-
-    - name: Restore Bot.Builder.Core.csproj
-      run: dotnet restore ./src/*/Bot.Builder.Core.csproj
-
-    - name: Build Bot.Builder.Core.csproj
-      run: dotnet build ./src/*/Bot.Builder.Core.csproj --no-restore  -c Release
-
-    - name: Pack Bot.Builder.Core.csproj
-      run: dotnet pack ./src/*/Bot.Builder.Core.csproj --no-restore -o ~/nuget  -c Release
-
     # Bot.Builder.FlowFailure.csproj
 
     - name: Restore Bot.Builder.FlowFailure.csproj
@@ -52,6 +41,28 @@ jobs:
 
     - name: Pack Bot.Builder.FlowFailure.csproj
       run: dotnet pack ./src/*/Bot.Builder.FlowFailure.csproj --no-restore -o ~/nuget  -c Release
+
+    # Bot.Builder.Core.Lock.csproj
+
+    - name: Restore Bot.Builder.Core.Lock.csproj
+      run: dotnet restore ./src/*/Bot.Builder.Core.Lock.csproj
+
+    - name: Build Bot.Builder.Core.Lock.csproj
+      run: dotnet build ./src/*/Bot.Builder.Core.Lock.csproj --no-restore  -c Release
+
+    - name: Pack Bot.Builder.Core.Lock.csproj
+      run: dotnet pack ./src/*/Bot.Builder.Core.Lock.csproj --no-restore -o ~/nuget  -c Release
+
+    # Bot.Builder.Core.csproj
+
+    - name: Restore Bot.Builder.Core.csproj
+      run: dotnet restore ./src/*/Bot.Builder.Core.csproj
+
+    - name: Build Bot.Builder.Core.csproj
+      run: dotnet build ./src/*/Bot.Builder.Core.csproj --no-restore  -c Release
+
+    - name: Pack Bot.Builder.Core.csproj
+      run: dotnet pack ./src/*/Bot.Builder.Core.csproj --no-restore -o ~/nuget  -c Release
 
     # Push
 
