@@ -5,5 +5,6 @@ partial struct BotFlowFailure
     public bool Equals(BotFlowFailure other)
         =>
         UserMessageComparer.Equals(UserMessage, other.UserMessage) &&
-        LogMessageComparer.Equals(LogMessage, other.LogMessage);
+        LogMessageComparer.Equals(LogMessage, other.LogMessage) &&
+        SourceExceptionComparer.Equals(SourceException, other.SourceException);
 }

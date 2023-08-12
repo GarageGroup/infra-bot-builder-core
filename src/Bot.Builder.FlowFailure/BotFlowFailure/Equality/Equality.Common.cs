@@ -1,13 +1,10 @@
 using System;
+using System.Collections.Generic;
 
 namespace GarageGroup.Infra.Bot.Builder;
 
 partial struct BotFlowFailure
 {
-    private static Type EqualityContract
-        =>
-        typeof(BotFlowFailure);
-
     private static StringComparer UserMessageComparer
         =>
         StringComparer.Ordinal;
@@ -15,4 +12,8 @@ partial struct BotFlowFailure
     private static StringComparer LogMessageComparer
         =>
         StringComparer.Ordinal;
+
+    private static ReferenceEqualityComparer SourceExceptionComparer
+        =>
+        ReferenceEqualityComparer.Instance;
 }

@@ -21,4 +21,6 @@ public readonly partial struct BotFlowFailure : IEquatable<BotFlowFailure>
     public string UserMessage => userMessage ?? string.Empty;
 
     public string LogMessage => logMessage ?? string.Empty;
+
+    public Exception? SourceException { get; init; } = null;
 }
