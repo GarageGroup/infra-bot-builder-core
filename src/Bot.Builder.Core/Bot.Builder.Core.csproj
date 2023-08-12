@@ -8,11 +8,11 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RootNamespace>GarageGroup.Infra.Bot.Builder</RootNamespace>
     <AssemblyName>GarageGroup.Infra.Bot.Builder.Core</AssemblyName>
-    <Version>0.0.1</Version>
+    <Version>0.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Bot.Builder" Version="4.19.3" />
+    <PackageReference Include="Microsoft.Bot.Builder" Version="4.20.1" />
     <PackageReference Include="PrimeFuncPack.Core.FlatArray" Version="1.1.0" />
     <PackageReference Include="PrimeFuncPack.Core.Func.Abstractions.AsyncValue" Version="2.0.0" />
     <PackageReference Include="PrimeFuncPack.Core.Result" Version="2.0.2" />
